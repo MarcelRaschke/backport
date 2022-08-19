@@ -12,10 +12,12 @@
     "check-prettier": "yarn run prettier --check",
     "eslint": "eslint --ignore-path .gitignore --max-warnings 0 \"./**/*.{js,ts}\"",
     "format-prettier": "yarn run prettier --write",
-    "prettier": "prettier --ignore-path .gitignore \"./**/*.{js,json,md,ts,yml}\""
+    "prettier": "prettier --ignore-path .gitignore \"./**/*.{js,json,md,ts,yml}\"",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
-    "@actions/core": "^1.1.1",
+    "@actions/core": "^1.9.1",
     "@actions/exec": "^1.0.1",
     "@actions/github": "^1.1.0",
     "@octokit/webhooks": "^6.3.0",
@@ -35,5 +37,9 @@
     "eslint-plugin-unicorn": "^12.0.1",
     "prettier": "^1.18.2",
     "typescript": "^3.6.3"
+  },
+  "snyk": true,
+  "dependencies": {
+    "@snyk/protect": "latest"
   }
 }
